@@ -117,11 +117,11 @@
 		5207AF001D04444A00255D16 /* 45_Client_Server_APIs_T */ = {
 			isa = PBXGroup;
 			children = (
+				52EC708F1D044B5C001F8047 /* SiSFriendsViewTableViewController.h */,
+				52EC70901D044B5C001F8047 /* SiSFriendsViewTableViewController.m */,
 				5207AF041D04444A00255D16 /* AppDelegate.h */,
 				5207AF051D04444A00255D16 /* AppDelegate.m */,
 				5207AF0A1D04444A00255D16 /* Main.storyboard */,
-				52EC708F1D044B5C001F8047 /* SiSFriendsViewTableViewController.h */,
-				52EC70901D044B5C001F8047 /* SiSFriendsViewTableViewController.m */,
 				5207AF0D1D04444A00255D16 /* Assets.xcassets */,
 				5207AF0F1D04444A00255D16 /* LaunchScreen.storyboard */,
 				5207AF121D04444A00255D16 /* Info.plist */,
