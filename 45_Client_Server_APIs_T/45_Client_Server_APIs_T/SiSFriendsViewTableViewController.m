@@ -9,10 +9,12 @@
 #import "SiSFriendsViewTableViewController.h"
 #import "SiSServerManager.h"
 #import "SiSFriend.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface SiSFriendsViewTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray* friendsArray;
+@property (assign, nonatomic) BOOL loadingData;
 
 @end
 
@@ -30,7 +32,7 @@ static NSInteger friendsInRequest = 5;
     
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor blackColor], NSForegroundColorAttributeName,
+      [UIColor grayColor], NSForegroundColorAttributeName,
       [UIFont fontWithName:@"Avenir Next" size:23.0], NSFontAttributeName, nil]];
     
     [self getFriendsFromServer];
@@ -103,15 +105,17 @@ static NSInteger friendsInRequest = 5;
                           placeholderImage:[UIImage imageNamed:@"preview.gif"]
                                    success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
                                     
-                                                           weakCell.imageView.image = image;
-                                                           
-                                                           CALayer* imageLayer = weakCell.imageView.layer;
-                                                           [imageLayer setCornerRadius:22];
-                                                           [imageLayer setBorderWidth:1];
-                                                           [imageLayer setBorderColor:[[UIColor grayColor] CGColor]];
-                                                           [imageLayer setMasksToBounds:YES];
-                                   }
-                                   failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                                       weakCell.imageView.image = image;
+                                       
+                                       CALayer* imageLayer = weakCell.imageView.layer;
+                                       [imageLayer setCornerRadius:22];
+                                       [imageLayer setBorderWidth:2];
+                                       [imageLayer setBorderColor:[[UIColor grayColor] CGColor]];
+                                       [imageLayer setMasksToBounds:YES];
+                                       [imageLayer layoutSublayers];
+                                       
+                                       
+                                   } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
                                        NSLog(@"beda beda beda");
                                    }];
 
