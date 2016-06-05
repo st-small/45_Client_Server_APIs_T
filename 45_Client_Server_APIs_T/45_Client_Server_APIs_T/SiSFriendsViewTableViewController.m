@@ -17,11 +17,45 @@
 
 @implementation SiSFriendsViewTableViewController
 
+static NSInteger friendsInRequest = 5;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.friendsArray = [NSMutableArray array];
+    [self getFriendsFromServer];
     
 }
+
+#pragma mark - API
+
+- (void) getFriendsFromServer {
+    
+    [[SiSServerManager sharedManager]
+     getFriendsWithOffset:[self.friendsArray count]
+     andCount:friendsInRequest
+     onSuccess:^(NSArray *friends) {
+         
+         [self.friendsArray addObjectsFromArray:friends];
+         
+         NSMutableArray* newPaths = [NSMutableArray array];
+         for (NSUInteger i = [self.friendsArray count] - [friends count]; i < [self.friendsArray count]; i++) {
+             
+             [newPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+         }
+         
+         [self.tableView beginUpdates];
+         [self.tableView insertRowsAtIndexPaths:newPaths
+                               withRowAnimation:UITableViewRowAnimationTop];
+         [self.tableView endUpdates];
+         
+     }
+     onFailure:^(NSError *error, NSInteger statusCode) {
+         NSLog(@"error = %@, code = %d", [error localizedDescription], statusCode);
+     }];
+    
+}
+
 
 #pragma mark - Table view data source
 
