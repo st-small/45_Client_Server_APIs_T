@@ -10,12 +10,12 @@
 		1ED9802FDD43681657377389 /* libPods-45_Client_Server_APIs_T.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E3253FD13C4EC1D615FCA3 /* libPods-45_Client_Server_APIs_T.a */; };
 		5207AF031D04444A00255D16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207AF021D04444A00255D16 /* main.m */; };
 		5207AF061D04444A00255D16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207AF051D04444A00255D16 /* AppDelegate.m */; };
-		5207AF091D04444A00255D16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207AF081D04444A00255D16 /* ViewController.m */; };
 		5207AF0C1D04444A00255D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5207AF0A1D04444A00255D16 /* Main.storyboard */; };
 		5207AF0E1D04444A00255D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5207AF0D1D04444A00255D16 /* Assets.xcassets */; };
 		5207AF111D04444A00255D16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5207AF0F1D04444A00255D16 /* LaunchScreen.storyboard */; };
 		5207AF1C1D04444A00255D16 /* _5_Client_Server_APIs_TTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207AF1B1D04444A00255D16 /* _5_Client_Server_APIs_TTests.m */; };
 		5207AF271D04444A00255D16 /* _5_Client_Server_APIs_TUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207AF261D04444A00255D16 /* _5_Client_Server_APIs_TUITests.m */; };
+		52EC70911D044B5C001F8047 /* SiSFriendsViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC70901D044B5C001F8047 /* SiSFriendsViewTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,6 @@
 		5207AF021D04444A00255D16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5207AF041D04444A00255D16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5207AF051D04444A00255D16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5207AF071D04444A00255D16 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5207AF081D04444A00255D16 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5207AF0B1D04444A00255D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5207AF0D1D04444A00255D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5207AF101D04444A00255D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +50,8 @@
 		5207AF221D04444A00255D16 /* 45_Client_Server_APIs_TUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 45_Client_Server_APIs_TUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5207AF261D04444A00255D16 /* _5_Client_Server_APIs_TUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _5_Client_Server_APIs_TUITests.m; sourceTree = "<group>"; };
 		5207AF281D04444A00255D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52EC708F1D044B5C001F8047 /* SiSFriendsViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSFriendsViewTableViewController.h; sourceTree = "<group>"; };
+		52EC70901D044B5C001F8047 /* SiSFriendsViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSFriendsViewTableViewController.m; sourceTree = "<group>"; };
 		59E3253FD13C4EC1D615FCA3 /* libPods-45_Client_Server_APIs_T.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-45_Client_Server_APIs_T.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8113886C75423E283404DE2D /* Pods-45_Client_Server_APIs_T.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45_Client_Server_APIs_T.debug.xcconfig"; path = "Pods/Target Support Files/Pods-45_Client_Server_APIs_T/Pods-45_Client_Server_APIs_T.debug.xcconfig"; sourceTree = "<group>"; };
 		F58FAC237A74BB068A63A576 /* Pods-45_Client_Server_APIs_T.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45_Client_Server_APIs_T.release.xcconfig"; path = "Pods/Target Support Files/Pods-45_Client_Server_APIs_T/Pods-45_Client_Server_APIs_T.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,9 +119,9 @@
 			children = (
 				5207AF041D04444A00255D16 /* AppDelegate.h */,
 				5207AF051D04444A00255D16 /* AppDelegate.m */,
-				5207AF071D04444A00255D16 /* ViewController.h */,
-				5207AF081D04444A00255D16 /* ViewController.m */,
 				5207AF0A1D04444A00255D16 /* Main.storyboard */,
+				52EC708F1D044B5C001F8047 /* SiSFriendsViewTableViewController.h */,
+				52EC70901D044B5C001F8047 /* SiSFriendsViewTableViewController.m */,
 				5207AF0D1D04444A00255D16 /* Assets.xcassets */,
 				5207AF0F1D04444A00255D16 /* LaunchScreen.storyboard */,
 				5207AF121D04444A00255D16 /* Info.plist */,
@@ -346,9 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5207AF091D04444A00255D16 /* ViewController.m in Sources */,
 				5207AF061D04444A00255D16 /* AppDelegate.m in Sources */,
 				5207AF031D04444A00255D16 /* main.m in Sources */,
+				52EC70911D044B5C001F8047 /* SiSFriendsViewTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

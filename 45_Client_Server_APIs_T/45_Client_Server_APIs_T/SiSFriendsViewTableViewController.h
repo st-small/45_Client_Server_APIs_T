@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SiSFriendsViewTableViewController.h
 //  45_Client_Server_APIs_T
 //
 //  Created by Stanly Shiyanovskiy on 05.06.16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SiSFriendsViewTableViewController : UITableViewController
 
 @end
-
