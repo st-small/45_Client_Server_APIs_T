@@ -8,6 +8,7 @@
 
 #import "SiSFriendsViewTableViewController.h"
 #import "SiSServerManager.h"
+#import "SiSFriend.h"
 
 @interface SiSFriendsViewTableViewController ()
 
@@ -84,11 +85,10 @@ static NSInteger friendsInRequest = 5;
         
     } else {
         
-        NSDictionary* friend = [self.friendsArray objectAtIndex:indexPath.row];
+        SiSFriend* friend = [self.friendsArray objectAtIndex:indexPath.row];
         
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
-                               [friend objectForKey:@"first_name"],
-                               [friend objectForKey:@"last_name"]];
+                               friend.firstName, friend.lastName];
         
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
