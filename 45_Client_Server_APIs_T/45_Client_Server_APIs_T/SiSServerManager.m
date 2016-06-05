@@ -7,6 +7,13 @@
 //
 
 #import "SiSServerManager.h"
+#import "AFNetworking.h"
+
+@interface SiSServerManager ()
+
+@property (strong, nonatomic) AFHTTPSessionManager* sessionManager;
+
+@end
 
 @implementation SiSServerManager
 
@@ -25,12 +32,60 @@
     return manager;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        NSURL* url = [NSURL URLWithString:@"https://api.vk.com/method"];
+        
+        self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
+    }
+    return self;
+}
+
 - (void) getFriendsWithOffset:(NSInteger)offset
                      andCount:(NSInteger)count
                     onSuccess:(void(^)(NSArray* friends))success
                     onFailure:(void(^)(NSError* error, NSInteger statusCode))failure {
     
+    NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"4418798",     @"user_id",
+                            @"name",        @"order",
+                            @(count),       @"count",
+                            @(offset),      @"offset",
+                            @"photo_50",    @"fields",
+                            @"nom",         @"name_case", nil];
+    
+    [self.sessionManager GET:@"friends.get"
+                  parameters:params
+                    progress:nil
+                     success:^(NSURLSessionTask* task, NSDictionary* responseObject) {
+                         NSLog(@"JSON: %@", responseObject);
+                         
+                         
+                     } failure:^(NSURLSessionTask* operation, NSError* error) {
+                         
+                         NSLog(@"Error: %@", error);
+                         
+                         if (failure) {
+                             failure(error, operation.error.code);
+                         }
+                         
+                     }];
+    
+
+    
     
 }
+
+
+
+
+
+
+
+
+
 
 @end
