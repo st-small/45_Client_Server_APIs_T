@@ -8,6 +8,7 @@
 
 #import "SiSServerManager.h"
 #import "AFNetworking.h"
+#import "SiSFriend.h"
 
 @interface SiSServerManager ()
 
@@ -64,6 +65,15 @@
                          NSLog(@"JSON: %@", responseObject);
                          
                          NSArray* friendsArray = [responseObject objectForKey:@"response"];
+                         
+                         NSMutableArray* objectsArray = [NSMutableArray array];
+                         
+                         for (NSDictionary* dict in friendsArray) {
+                             
+                             SiSFriend* friend = [[SiSFriend alloc] initWithServerResponse:dict];
+                             
+                             [objectsArray addObject:friend];
+                         }
                          
                          if (success) {
                              
