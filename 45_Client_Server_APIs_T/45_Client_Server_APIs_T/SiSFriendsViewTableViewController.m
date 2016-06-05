@@ -52,9 +52,10 @@ static NSInteger friendsInRequest = 5;
                                withRowAnimation:UITableViewRowAnimationTop];
          [self.tableView endUpdates];
          
-     }
-     onFailure:^(NSError *error, NSInteger statusCode) {
-         NSLog(@"error = %@, code = %d", [error localizedDescription], statusCode);
+         self.loadingData = NO;
+         
+     } onFailure:^(NSError *error) {
+         NSLog(@"error = %@", [error localizedDescription]);
      }];
     
 }
