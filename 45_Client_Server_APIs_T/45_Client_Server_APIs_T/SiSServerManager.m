@@ -62,7 +62,7 @@
                   parameters:params
                     progress:nil
                      success:^(NSURLSessionTask* task, NSDictionary* responseObject) {
-                         //NSLog(@"JSON: %@", responseObject);
+                         NSLog(@"JSON: %@", responseObject);
                          
                          NSArray* friendsArray = [responseObject objectForKey:@"response"];
                          

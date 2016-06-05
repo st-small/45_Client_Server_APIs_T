@@ -116,7 +116,8 @@ static NSInteger friendsInRequest = 5;
                                        
                                        
                                    } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
-                                       NSLog(@"beda beda beda");
+                                       NSLog(@"beda beda beda\n%@\n%@", [error description], [request description]);
+                                       
                                    }];
 
     
