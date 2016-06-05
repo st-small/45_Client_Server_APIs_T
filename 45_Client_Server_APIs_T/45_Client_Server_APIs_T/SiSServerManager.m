@@ -63,6 +63,13 @@
                      success:^(NSURLSessionTask* task, NSDictionary* responseObject) {
                          NSLog(@"JSON: %@", responseObject);
                          
+                         NSArray* friendsArray = [responseObject objectForKey:@"response"];
+                         
+                         if (success) {
+                             
+                             success(friendsArray);
+                         }
+                         
                          
                      } failure:^(NSURLSessionTask* operation, NSError* error) {
                          
@@ -73,8 +80,6 @@
                          }
                          
                      }];
-    
-
     
     
 }
