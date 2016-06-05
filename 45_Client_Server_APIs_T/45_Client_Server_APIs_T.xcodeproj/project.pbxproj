@@ -18,6 +18,7 @@
 		52EC70911D044B5C001F8047 /* SiSFriendsViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC70901D044B5C001F8047 /* SiSFriendsViewTableViewController.m */; };
 		52EC70941D044D6D001F8047 /* SiSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC70931D044D6D001F8047 /* SiSServerManager.m */; };
 		52EC70971D046012001F8047 /* SiSFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC70961D046012001F8047 /* SiSFriend.m */; };
+		52EC70991D047A5F001F8047 /* preview.gif in Resources */ = {isa = PBXBuildFile; fileRef = 52EC70981D047A5F001F8047 /* preview.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		52EC70931D044D6D001F8047 /* SiSServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSServerManager.m; sourceTree = "<group>"; };
 		52EC70951D046012001F8047 /* SiSFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSFriend.h; sourceTree = "<group>"; };
 		52EC70961D046012001F8047 /* SiSFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSFriend.m; sourceTree = "<group>"; };
+		52EC70981D047A5F001F8047 /* preview.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = preview.gif; sourceTree = "<group>"; };
 		59E3253FD13C4EC1D615FCA3 /* libPods-45_Client_Server_APIs_T.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-45_Client_Server_APIs_T.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8113886C75423E283404DE2D /* Pods-45_Client_Server_APIs_T.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45_Client_Server_APIs_T.debug.xcconfig"; path = "Pods/Target Support Files/Pods-45_Client_Server_APIs_T/Pods-45_Client_Server_APIs_T.debug.xcconfig"; sourceTree = "<group>"; };
 		F58FAC237A74BB068A63A576 /* Pods-45_Client_Server_APIs_T.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45_Client_Server_APIs_T.release.xcconfig"; path = "Pods/Target Support Files/Pods-45_Client_Server_APIs_T/Pods-45_Client_Server_APIs_T.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				52EC70931D044D6D001F8047 /* SiSServerManager.m */,
 				5207AF041D04444A00255D16 /* AppDelegate.h */,
 				5207AF051D04444A00255D16 /* AppDelegate.m */,
+				52EC70981D047A5F001F8047 /* preview.gif */,
 				5207AF0A1D04444A00255D16 /* Main.storyboard */,
 				5207AF0D1D04444A00255D16 /* Assets.xcassets */,
 				5207AF0F1D04444A00255D16 /* LaunchScreen.storyboard */,
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5207AF111D04444A00255D16 /* LaunchScreen.storyboard in Resources */,
+				52EC70991D047A5F001F8047 /* preview.gif in Resources */,
 				5207AF0E1D04444A00255D16 /* Assets.xcassets in Resources */,
 				5207AF0C1D04444A00255D16 /* Main.storyboard in Resources */,
 			);
