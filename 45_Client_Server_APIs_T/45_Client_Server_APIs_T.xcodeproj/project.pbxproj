@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ED9802FDD43681657377389 /* libPods-45_Client_Server_APIs_T.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E3253FD13C4EC1D615FCA3 /* libPods-45_Client_Server_APIs_T.a */; };
 		5207AF031D04444A00255D16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207AF021D04444A00255D16 /* main.m */; };
 		5207AF061D04444A00255D16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207AF051D04444A00255D16 /* AppDelegate.m */; };
 		5207AF091D04444A00255D16 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5207AF081D04444A00255D16 /* ViewController.m */; };
@@ -51,6 +52,9 @@
 		5207AF221D04444A00255D16 /* 45_Client_Server_APIs_TUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 45_Client_Server_APIs_TUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5207AF261D04444A00255D16 /* _5_Client_Server_APIs_TUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _5_Client_Server_APIs_TUITests.m; sourceTree = "<group>"; };
 		5207AF281D04444A00255D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59E3253FD13C4EC1D615FCA3 /* libPods-45_Client_Server_APIs_T.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-45_Client_Server_APIs_T.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8113886C75423E283404DE2D /* Pods-45_Client_Server_APIs_T.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45_Client_Server_APIs_T.debug.xcconfig"; path = "Pods/Target Support Files/Pods-45_Client_Server_APIs_T/Pods-45_Client_Server_APIs_T.debug.xcconfig"; sourceTree = "<group>"; };
+		F58FAC237A74BB068A63A576 /* Pods-45_Client_Server_APIs_T.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-45_Client_Server_APIs_T.release.xcconfig"; path = "Pods/Target Support Files/Pods-45_Client_Server_APIs_T/Pods-45_Client_Server_APIs_T.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ED9802FDD43681657377389 /* libPods-45_Client_Server_APIs_T.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11037830CBA500221FA5C86B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8113886C75423E283404DE2D /* Pods-45_Client_Server_APIs_T.debug.xcconfig */,
+				F58FAC237A74BB068A63A576 /* Pods-45_Client_Server_APIs_T.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5207AEF51D04444A00255D16 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +99,8 @@
 				5207AF1A1D04444A00255D16 /* 45_Client_Server_APIs_TTests */,
 				5207AF251D04444A00255D16 /* 45_Client_Server_APIs_TUITests */,
 				5207AEFF1D04444A00255D16 /* Products */,
+				11037830CBA500221FA5C86B /* Pods */,
+				A87A9BF4417BA960973E276D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +156,14 @@
 			path = 45_Client_Server_APIs_TUITests;
 			sourceTree = "<group>";
 		};
+		A87A9BF4417BA960973E276D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59E3253FD13C4EC1D615FCA3 /* libPods-45_Client_Server_APIs_T.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5207AF2B1D04444A00255D16 /* Build configuration list for PBXNativeTarget "45_Client_Server_APIs_T" */;
 			buildPhases = (
+				3B19B74F82BDA0A670A13A05 /* [CP] Check Pods Manifest.lock */,
 				5207AEFA1D04444A00255D16 /* Sources */,
 				5207AEFB1D04444A00255D16 /* Frameworks */,
 				5207AEFC1D04444A00255D16 /* Resources */,
+				9D8456DAF700F11641B6A548 /* [CP] Embed Pods Frameworks */,
+				6D1AB344327AFD48AA19089F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,6 +292,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B19B74F82BDA0A670A13A05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6D1AB344327AFD48AA19089F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-45_Client_Server_APIs_T/Pods-45_Client_Server_APIs_T-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D8456DAF700F11641B6A548 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-45_Client_Server_APIs_T/Pods-45_Client_Server_APIs_T-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5207AEFA1D04444A00255D16 /* Sources */ = {
@@ -414,6 +489,7 @@
 		};
 		5207AF2C1D04444A00255D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8113886C75423E283404DE2D /* Pods-45_Client_Server_APIs_T.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = 45_Client_Server_APIs_T/Info.plist;
@@ -425,6 +501,7 @@
 		};
 		5207AF2D1D04444A00255D16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F58FAC237A74BB068A63A576 /* Pods-45_Client_Server_APIs_T.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = 45_Client_Server_APIs_T/Info.plist;
