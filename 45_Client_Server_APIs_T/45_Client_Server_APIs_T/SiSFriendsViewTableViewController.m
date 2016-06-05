@@ -7,6 +7,7 @@
 //
 
 #import "SiSFriendsViewTableViewController.h"
+#import "SiSServerManager.h"
 
 @interface SiSFriendsViewTableViewController ()
 
