@@ -22,6 +22,8 @@ static NSInteger friendsInRequest = 5;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"Мои друзья:";
+    
     self.friendsArray = [NSMutableArray array];
     [self getFriendsFromServer];
     
