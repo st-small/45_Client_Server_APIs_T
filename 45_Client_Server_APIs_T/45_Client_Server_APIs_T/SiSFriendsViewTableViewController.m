@@ -63,7 +63,7 @@ static NSInteger friendsInRequest = 5;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [self.friendsArray count];
+    return [self.friendsArray count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,9 +77,38 @@ static NSInteger friendsInRequest = 5;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    return cell;
+    if (indexPath.row == [self.friendsArray count]) {
+        
+        cell.textLabel.text = @"ЗАГРУЗИТЬ ЕЩЕ...";
+        
+        
+    } else {
+        
+        NSDictionary* friend = [self.friendsArray objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
+                               [friend objectForKey:@"first_name"],
+                               [friend objectForKey:@"last_name"]];
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+
+    }
+    
+        return cell;
 }
 
+#pragma mark - Table view delegate
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == [self.friendsArray count]) {
+        
+        [self getFriendsFromServer];
+        
+    }
+}
 
 @end
