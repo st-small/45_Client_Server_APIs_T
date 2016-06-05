@@ -26,6 +26,13 @@ static NSInteger friendsInRequest = 5;
     self.navigationItem.title = @"Мои друзья:";
     
     self.friendsArray = [NSMutableArray array];
+    self.loadingData = YES;
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor blackColor], NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"Avenir Next" size:23.0], NSFontAttributeName, nil]];
+    
     [self getFriendsFromServer];
     
 }
@@ -65,36 +72,49 @@ static NSInteger friendsInRequest = 5;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [self.friendsArray count] + 1;
+    return [self.friendsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString* identifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (!cell) {
         
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    if (indexPath.row == [self.friendsArray count]) {
-        
-        cell.textLabel.text = @"ЗАГРУЗИТЬ ЕЩЕ...";
-        
-        
-    } else {
-        
-        SiSFriend* friend = [self.friendsArray objectAtIndex:indexPath.row];
-        
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
-                               friend.firstName, friend.lastName];
-        
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
+    SiSFriend* friend = [self.friendsArray objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",
+                           friend.firstName, friend.lastName];
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    NSURLRequest* request = [NSURLRequest requestWithURL:friend.imageURL];
+    
+    __weak UITableViewCell* weakCell = cell;
+    
+    cell.imageView.image = nil;
+    
+    [cell.imageView setImageWithURLRequest:request
+                          placeholderImage:[UIImage imageNamed:@"preview.gif"]
+                                   success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+                                    
+                                                           weakCell.imageView.image = image;
+                                                           
+                                                           CALayer* imageLayer = weakCell.imageView.layer;
+                                                           [imageLayer setCornerRadius:22];
+                                                           [imageLayer setBorderWidth:1];
+                                                           [imageLayer setBorderColor:[[UIColor grayColor] CGColor]];
+                                                           [imageLayer setMasksToBounds:YES];
+                                   }
+                                   failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                                       NSLog(@"beda beda beda");
+                                   }];
 
-    }
     
         return cell;
 }
@@ -103,12 +123,25 @@ static NSInteger friendsInRequest = 5;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (indexPath.row == [self.friendsArray count]) {
-        
-        [self getFriendsFromServer];
-        
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    
+//    if (indexPath.row == [self.friendsArray count]) {
+//        
+//        [self getFriendsFromServer];
+//        
+//    }
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
+    if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
+        if (!self.loadingData)
+        {
+            self.loadingData = YES;
+            [self getFriendsFromServer];
+        }
     }
 }
 

@@ -48,21 +48,21 @@
 - (void) getFriendsWithOffset:(NSInteger)offset
                      andCount:(NSInteger)count
                     onSuccess:(void(^)(NSArray* friends))success
-                    onFailure:(void(^)(NSError* error, NSInteger statusCode))failure {
+                    onFailure:(void(^)(NSError* error))failure {
     
     NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
-                            @"4418798",     @"user_id",
-                            @"name",        @"order",
-                            @(count),       @"count",
-                            @(offset),      @"offset",
-                            @"photo_50",    @"fields",
-                            @"nom",         @"name_case", nil];
+                            @"4418798",         @"user_id",
+                            @"name",            @"order",
+                            @(count),           @"count",
+                            @(offset),          @"offset",
+                            @"photo_100",       @"fields",
+                            @"nom",             @"name_case", nil];
     
     [self.sessionManager GET:@"friends.get"
                   parameters:params
                     progress:nil
                      success:^(NSURLSessionTask* task, NSDictionary* responseObject) {
-                         NSLog(@"JSON: %@", responseObject);
+                         //NSLog(@"JSON: %@", responseObject);
                          
                          NSArray* friendsArray = [responseObject objectForKey:@"response"];
                          
@@ -86,7 +86,7 @@
                          NSLog(@"Error: %@", error);
                          
                          if (failure) {
-                             failure(error, operation.error.code);
+                             failure(error);
                          }
                          
                      }];

@@ -15,6 +15,6 @@
 - (void) getFriendsWithOffset:(NSInteger)offset
                      andCount:(NSInteger)count
                     onSuccess:(void(^)(NSArray* friends))success
-                    onFailure:(void(^)(NSError* error, NSInteger statusCode))failure;
+                    onFailure:(void(^)(NSError* error))failure;
 
 @end
