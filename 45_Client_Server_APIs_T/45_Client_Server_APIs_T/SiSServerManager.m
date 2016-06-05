@@ -77,7 +77,7 @@
                          
                          if (success) {
                              
-                             success(friendsArray);
+                             success(objectsArray);
                          }
                          
                          
