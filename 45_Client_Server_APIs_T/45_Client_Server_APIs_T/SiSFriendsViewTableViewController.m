@@ -95,6 +95,40 @@ static NSInteger friendsInRequest = 5;
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
+    [self returnCellAfterRequestFriend:friend andUsingCell: cell];
+    
+//    NSURLRequest* request = [NSURLRequest requestWithURL:friend.imageURL];
+//    
+//    __weak UITableViewCell* weakCell = cell;
+//    
+//    cell.imageView.image = nil;
+//    
+//    [cell.imageView setImageWithURLRequest:request
+//                          placeholderImage:[UIImage imageNamed:@"preview.gif"]
+//                                   success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+//                                       
+//                                       
+//                                       weakCell.imageView.image = image;
+//                                       
+//                                       CALayer* imageLayer = weakCell.imageView.layer;
+//                                       [imageLayer setCornerRadius:22];
+//                                       [imageLayer setBorderWidth:2];
+//                                       [imageLayer setBorderColor:[[UIColor grayColor] CGColor]];
+//                                       [imageLayer setMasksToBounds:YES];
+//                                       [imageLayer layoutSublayers];
+//                                       
+//                                       
+//                                   } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+//                                       NSLog(@"beda beda beda\n%@\n%@", [error description], [request description]);
+//                                       
+//                                   }];
+
+    
+        return cell;
+}
+
+- (UITableViewCell*) returnCellAfterRequestFriend:(SiSFriend*) friend andUsingCell:(UITableViewCell*) cell {
+    
     NSURLRequest* request = [NSURLRequest requestWithURL:friend.imageURL];
     
     __weak UITableViewCell* weakCell = cell;
@@ -104,7 +138,8 @@ static NSInteger friendsInRequest = 5;
     [cell.imageView setImageWithURLRequest:request
                           placeholderImage:[UIImage imageNamed:@"preview.gif"]
                                    success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
-                                    
+                                       
+                                       
                                        weakCell.imageView.image = image;
                                        
                                        CALayer* imageLayer = weakCell.imageView.layer;
@@ -119,9 +154,9 @@ static NSInteger friendsInRequest = 5;
                                        NSLog(@"beda beda beda\n%@\n%@", [error description], [request description]);
                                        
                                    }];
-
     
-        return cell;
+    return cell;
+
 }
 
 #pragma mark - Table view delegate
